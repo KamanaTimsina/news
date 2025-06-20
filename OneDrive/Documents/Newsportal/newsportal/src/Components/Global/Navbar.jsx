@@ -84,7 +84,7 @@ function Navbar() {
             )}
           </li>
 
-          <li><Link to={"/contact"} className="block hover:text-red-500">Blog</Link></li>
+          <li><Link to={"/Blog"} className="block hover:text-red-500">Blog</Link></li>
           <li><a href="#" className="block hover:text-red-500">About Us</a></li>
           <li><Link to={"/contact"} className="block hover:text-red-500">Contact Us</Link></li>
           <li>

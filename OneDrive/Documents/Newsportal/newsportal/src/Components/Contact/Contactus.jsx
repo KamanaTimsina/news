@@ -35,10 +35,8 @@ const contactDetails = [
 const Contactus = () => {
   return (
     <div className="w-full px-4 py-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-6">
-      {/* Left Section */}
       <div className="md:w-2/3 w-full flex flex-col gap-6">
-        {/* Form Section */}
-        <div className="bg-gray-100 p-6 rounded shadow-md space-y-6">
+        <div className="bg-white p-6 rounded shadow-md space-y-6">
           <div>
             <h2 className="text-2xl font-bold text-red-600 mb-2">Contact Us</h2>
             <p className="text-black text-lg">
@@ -76,9 +74,8 @@ const Contactus = () => {
           </form>
         </div>
 
-        {/* Location Section */}
-        <div className="bg-gray-100 p-6 rounded shadow-md space-y-4">
-          <h3 className="text-lg font-semibold text-black mb-2">Our Location</h3>
+        <div className="bg-white p-6 rounded shadow-md space-y-4">
+          <h3 className="text-xl border-l-4 border-red-500 pl-4 mb-4 font-bold">Our Location</h3>
           <div className="w-full h-64 rounded overflow-hidden shadow-md">
             <iframe
               title="Location Map"
@@ -92,7 +89,6 @@ const Contactus = () => {
             ></iframe>
           </div>
 
-          {/* Contact Info Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
             {contactDetails.map((item, index) => (
               <div key={index} className="text-sm text-black">
@@ -103,10 +99,8 @@ const Contactus = () => {
         </div>
       </div>
 
-      {/* Right Section */}
       <div className="md:w-1/3 w-full flex flex-col space-y-5">
-        {/* Don't Miss */}
-        <div className="bg-gray-100 p-4 rounded shadow-md">
+        <div className="bg-gray-50 p-4 rounded shadow-md">
           <h3 className="text-xl border-l-4 border-red-500 pl-4 mb-4 font-bold">Don't Miss</h3>
           <div className="space-y-6">
             {dontMissItems.map((item, index) => (
@@ -116,7 +110,7 @@ const Contactus = () => {
                   alt={item.title}
                   className="w-full h-40 object-cover rounded"
                 />
-                <span className="text-xs text-white bg-yellow-500 px-2 py-1 rounded">
+                <span className="text-xs text-white bg-red-500 px-2 py-1 rounded">
                   {item.category}
                 </span>
                 <h4 className="text-md font-semibold text-black">{item.title}</h4>
@@ -125,8 +119,7 @@ const Contactus = () => {
           </div>
         </div>
 
-        {/* Most Viewed */}
-        <div className="bg-gray-100 p-4 rounded shadow-md">
+        <div className="bg-gray-50 p-4 rounded shadow-md">
           <h3 className="text-xl border-l-4 border-red-500 pl-4 font-bold">Most Viewed</h3>
           <div className="space-y-4 m-2">
             {mostViewedItems.map((item, index) => (
