@@ -1,11 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CiSearch } from "react-icons/ci";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
 import Logo from '../../assets/Images/Navbar/Newslogo.png';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [categories, setCategories] = useState([]); // ⬅ Dummy data state
+
+  const dropdownRef = useRef(null);
+
+  // Dummy data simulation
+  useEffect(() => {
+    // Simulate fetch delay
+    setTimeout(() => {
+      setCategories([
+        { id: 1, name: 'Politics', slug: 'politics' },
+        { id: 2, name: 'Education', slug: 'education' },
+        { id: 3, name: 'Entertainment', slug: 'entertainment' },
+        { id: 4, name: 'World', slug: 'world' },
+        { id: 5, name: 'Games', slug: 'games' },
+      ]);
+    }, 500);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="w-full bg-white shadow-md">
@@ -30,12 +63,35 @@ function Navbar() {
           transition-all duration-300 shadow-md md:shadow-none font-semibold text-sm md:text-base lg:text-lg
           ${menuOpen ? 'block' : 'hidden md:flex'}
         `}>
-          <li><a href="#" className="block hover:text-red-500">Home</a></li>
-          <li><a href="#" className="block hover:text-red-500">Single</a></li>
-          <li><a href="#" className="block hover:text-red-500">Archive</a></li>
-          <li><a href="#" className="block hover:text-red-500">Pages</a></li>
-          <li><a href="#" className="block hover:text-red-500">Our Social</a></li>
-          <li><a href="#" className="block hover:text-red-500">Contact Us</a></li>
+          <li><Link to="/" className="block hover:text-red-500">Home</Link></li>
+
+          <li className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setDropdownOpen(prev => !prev)}
+              className="flex items-center gap-1 hover:text-red-500"
+            >
+              Categories <IoIosArrowDown className="mt-0.5" />
+            </button>
+
+            {dropdownOpen && (
+              <ul className="absolute left-0 top-10 bg-white border rounded-md shadow-lg z-30 w-44 py-2 text-sm ">
+                {categories.map(category => (
+                  <li key={category.id}>
+                    <Link
+                      to={`/categories/${category.slug}`}
+                      className="block hover:bg-red-700 hover:text-white px-4 py-2"
+                    >
+                      {category.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+
+          <li><Link to="/blogs" className="block hover:text-red-500">Blogs</Link></li>
+          <li><Link to="/about" className="block hover:text-red-500">About Us</Link></li>
+          <li><Link to="/contact" className="block hover:text-red-500">Contact Us</Link></li>
           <li>
             <button onClick={() => setSearchOpen(!searchOpen)} className="hover:text-blue-500">
               <CiSearch className="text-2xl md:text-3xl text-gray-600" />
