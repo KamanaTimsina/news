@@ -9,11 +9,12 @@ import {
 } from "lucide-react";
 import Gadgets from "../../assets/Images/ads/Gadgets.jpg";
 import gif1 from "../../assets/Images/Categories/Ads/lev01.gif";
-import gif2 from "../../assets/Images/Categories/Ads/SidharthaBank.gif"; 
+import gif2 from "../../assets/Images/Categories/Ads/SidharthaBank.gif";
 import gif3 from "../../assets/Images/Categories/Ads/subisu.gif";
 import gif4 from "../../assets/Images/Categories/Ads/khalti.gif";
 
 const CategoryPage = ({ title, description, featuredNews, newsArticles }) => {
+  const [showShareOptions, setShowShareOptions] = useState(false);
   const [showAllArticles, setShowAllArticles] = useState(false);
 
   // Ads tagged as 'sidebar' or 'inline'
@@ -98,10 +99,6 @@ const CategoryPage = ({ title, description, featuredNews, newsArticles }) => {
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-1">
-                        <Eye className="w-4 h-4" />
-                        <span>{featuredNews.views}</span>
-                      </div>
                       <button className="flex items-center gap-1 hover:text-red-700 transition-colors">
                         <Share2 className="w-4 h-4" />
                         <span>Share</span>
@@ -111,7 +108,7 @@ const CategoryPage = ({ title, description, featuredNews, newsArticles }) => {
                 </div>
               </div>
             </div>
-               {/* Ad after featured story */}
+            {/* Ad after featured story */}
             {inlineAds[1] && (
               <div className="mb-8">
                 <img
@@ -235,10 +232,10 @@ const ArticleCard = ({ article }) => (
             {article.publishedAt}
           </span>
         </div>
-        <span className="flex items-center gap-1">
-          <Eye className="w-3 h-3" />
-          {article.views}
-        </span>
+        <button className="flex items-center gap-1 hover:text-red-700 transition-colors">
+          <Share2 className="w-4 h-4" />
+          <span>Share</span>
+        </button>
       </div>
     </div>
   </div>

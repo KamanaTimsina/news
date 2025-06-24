@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from "react-router-dom";
 import Slider from 'react-slick';
 import { FaDotCircle } from "react-icons/fa";
 
@@ -69,6 +70,7 @@ function Breaking() {
 
   const ArticleCard = ({ article }) => (
     <div className="p-2 " onClick={handleClick}>
+      <Link to={`/news/${article.id}`}>
       <div className="bg-white shadow-md rounded-md overflow-hidden flex flex-col sm:flex-row  items-start gap-4 p-4 h-full cursor-pointer">
         <img src={article.image} alt={article.title} className="w-full sm:w-32 h-32 object-cover rounded" />
         <div>
@@ -78,6 +80,7 @@ function Breaking() {
           <h2 className="font-semibold text-base">{article.title}</h2>
         </div>
       </div>
+      </Link>
     </div>
   );
 

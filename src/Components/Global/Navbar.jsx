@@ -13,9 +13,9 @@ function Navbar() {
 
   const dropdownRef = useRef(null);
 
-  // Dummy data simulation
+
   useEffect(() => {
-    // Simulate fetch delay
+
     setTimeout(() => {
       setCategories([
         { id: 1, name: 'Politics', slug: 'politics' },
