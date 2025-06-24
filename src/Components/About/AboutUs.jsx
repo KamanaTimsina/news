@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 
 const AboutUs = () => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [currentStat, setCurrentStat] = useState(0);
 
   const stats = [
@@ -94,22 +93,22 @@ const AboutUs = () => {
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-10 lg:py-20">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-black bg-clip-text text-transparent">
-              Truth. <span className="text-red-600">Integrity.</span> Impact.
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-black bg-clip-text text-transparent">
+              Truth. <span className="text-red-700">Integrity.</span> Impact.
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-black max-w-3xl mx-auto leading-relaxed">
+            <p className="text-md md:text-xl mb-8 text-black max-w-3xl mx-auto leading-relaxed">
               We're more than a news organization – we're your trusted partner
               in understanding the world around you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button    onClick={() => {
       document.getElementById("values")?.scrollIntoView({ behavior: "smooth" });
-    }} className="bg-red-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+    }} className="bg-red-700 text-white px-4 md:px-8 py-2  rounded-full font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Our Values
               </button>
               <button onClick={() => {
       document.getElementById("team")?.scrollIntoView({ behavior: "smooth" });
-    }} className="border-2 border-red-500 text-black px-8 py-4 rounded-full font-semibold  hover:text-black transition-all duration-300 transform hover:scale-105">
+    }} className="border-2 border-red-700 text-black px-4  md:px-8 py-2 rounded-full font-semibold  hover:text-black transition-all duration-300 transform hover:scale-105">
                 Meet the Team
               </button>
             </div>
@@ -126,22 +125,22 @@ const AboutUs = () => {
               return (
                 <div
                   key={index}
-                  className={`text-center p-6 rounded-2xl transition-all duration-500 transform hover:scale-105 ${
+                  className={`text-center p-2 md:p-6 rounded-2xl transition-all duration-500 transform hover:scale-105 ${
                     currentStat === index
-                      ? "bg-red-500 text-white shadow-xl"
-                      : "bg-gradient-to-br from-gray-200/80 to-white border-1 border-red-500 hover:bg-gray-100"
+                      ? "bg-red-700 text-white shadow-xl"
+                      : "bg-gradient-to-br from-gray-200/80 to-white border-1 border-red-700 hover:bg-gray-100"
                   }`}
                 >
                   <Icon
-                    className={`w-8 h-8 mx-auto mb-4 ${
-                      currentStat === index ? "text-white" : "text-red-600"
+                    className={` w-6 h-6 md:w-8 md:h-8 mx-auto mb-4 ${
+                      currentStat === index ? "text-white" : "text-red-700"
                     }`}
                   />
-                  <div className="text-3xl lg:text-4xl font-bold mb-2">
+                  <div className="text-xl lg:text-4xl font-bold mb-2">
                     {stat.number}
                   </div>
                   <div
-                    className={`text-sm font-medium ${
+                    className={`text-sm md:text-lg font-medium ${
                       currentStat === index ? "text-blue-100" : "text-black"
                     }`}
                   >
@@ -159,10 +158,10 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-2">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl text-center md:text-left lg:text-4xl font-bold text-gray-900 mb-6">
                 Our Story
               </h2>
-              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+              <div className="space-y-6 text-md md:text-lg text-gray-700 leading-relaxed">
                 <p>
                   Founded in 2010, NewsHub emerged from a simple belief: quality
                   journalism can change the world. What started as a small team
@@ -181,8 +180,8 @@ const AboutUs = () => {
                   beginning.
                 </p>
               </div>
-              <button className="mt-8 bg-red-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2">
-                Read Our Timeline
+              <button className="mt-4 md:mt-8 bg-red-700 text-xl text-white px-8 py-2 md:py-4 rounded-full font-semibold hover:bg-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2">
+               Contact Us?
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>
@@ -198,8 +197,8 @@ const AboutUs = () => {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32  bg-red-500 rounded-full flex items-center justify-center shadow-xl">
-                <span className="text-2xl font-semi-bold text-white">13+ Years</span>
+              <div className="absolute -bottom-6 -right-2 w-24 h-24 md:w-32 md:h-32  bg-red-700 rounded-full flex items-center justify-center shadow-xl">
+                <span className="text-md md:text-lg lg:text-2xl font-semi-bold text-white">13+ Years</span>
               </div>
             </div>
           </div>
@@ -211,9 +210,9 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-black mb-6">
-              Our <span className="text-red-500">Values</span>
+              Our <span className="text-red-700">Values</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-md md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
               These principles guide every story we tell and every decision we
               make.
             </p>
@@ -225,13 +224,13 @@ const AboutUs = () => {
                 key={index}
                 className="border-2 border-gray-200 p-8 rounded-3xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
               >
-                <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4">
+                <h3 className="text-2xl font-bold mb-4">
                   {value.title}
                 </h3>
-                <p className="text-black text-justify ">
+                <p className="text-gray-600 text-justify ">
                   {value.description}
                 </p>
               </div>
@@ -247,9 +246,9 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Meet Our <span className="text-red-500">Team</span>
+              Meet Our <span className="text-red-700">Team</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-md md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
               The passionate journalists and storytellers behind our
               award-winning coverage.
             </p>
@@ -273,7 +272,7 @@ const AboutUs = () => {
                   <h3 className="text-xl font-bold text-black mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-red-500 font-semibold mb-3">
+                  <p className="text-red-700 font-semibold mb-3">
                     {member.role}
                   </p>
                   <p className="text-gray-600 text-sm">{member.bio}</p>

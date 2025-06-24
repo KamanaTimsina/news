@@ -80,6 +80,7 @@ function Navbar() {
                     <Link
                       to={`/categories/${category.slug}`}
                       className="block hover:bg-red-700 hover:text-white px-4 py-2"
+                      onClick={() => {setDropdownOpen(false); setMenuOpen(false)}}
                     >
                       {category.name}
                     </Link>
@@ -89,9 +90,9 @@ function Navbar() {
             )}
           </li>
 
-          <li><Link to="/blogs" className="block hover:text-red-500">Blogs</Link></li>
-          <li><Link to="/about" className="block hover:text-red-500">About Us</Link></li>
-          <li><Link to="/contact" className="block hover:text-red-500">Contact Us</Link></li>
+          <li><Link to="/blogs" className="block hover:text-red-500" onClick={() => setMenuOpen(false)}>Blogs</Link></li>
+          <li><Link to="/about" className="block hover:text-red-500" onClick={() => setMenuOpen(false)}>About Us</Link></li>
+          <li><Link to="/contact" className="block hover:text-red-500" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
           <li>
             <button onClick={() => setSearchOpen(!searchOpen)} className="hover:text-blue-500">
               <CiSearch className="text-2xl md:text-3xl text-gray-600" />

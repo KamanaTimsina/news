@@ -38,6 +38,58 @@ const PoliticsPage = () => {
       views: "5.3K",
       category: "Reform"
     },
+        {
+      id: 2,
+      title: "Opposition Criticizes Delay in Local Elections",
+      excerpt: "Key leaders accuse the ruling party of strategic delay tactics.",
+      image: image2,
+      author: "Suraj Bhattarai",
+      publishedAt: "6 hours ago",
+      views: "9.9K",
+      category: "Elections"
+    },
+        {
+      id: 2,
+      title: "Opposition Criticizes Delay in Local Elections",
+      excerpt: "Key leaders accuse the ruling party of strategic delay tactics.",
+      image: image2,
+      author: "Suraj Bhattarai",
+      publishedAt: "6 hours ago",
+      views: "9.9K",
+      category: "Elections"
+    },
+        {
+      id: 2,
+      title: "Opposition Criticizes Delay in Local Elections",
+      excerpt: "Key leaders accuse the ruling party of strategic delay tactics.",
+      image: image2,
+      author: "Suraj Bhattarai",
+      publishedAt: "6 hours ago",
+      views: "9.9K",
+      category: "Elections"
+    },
+      {
+      id: 3,
+      title: "Political Parties Sign Agreement on Electoral Reform",
+      excerpt: "A joint commitment to fairer representation and reduced corruption.",
+      image: image3,
+      author: "Sita Neupane",
+      publishedAt: "10 hours ago",
+      views: "5.3K",
+      category: "Reform"
+    },
+      {
+      id: 3,
+      title: "Political Parties Sign Agreement on Electoral Reform",
+      excerpt: "A joint commitment to fairer representation and reduced corruption.",
+      image: image3,
+      author: "Sita Neupane",
+      publishedAt: "10 hours ago",
+      views: "5.3K",
+      category: "Reform"
+    },
+
+
     // Add more as needed
   ];
 
